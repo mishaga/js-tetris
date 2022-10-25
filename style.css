@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    background-color: aliceblue;
+    text-align: center;
+    font-family: monospace;
+}
+
+header {
+    margin: 1rem 0 0 0;
+}
+
+#tetris-game-canvas,
+#next-figure-canvas,
+#statistics,
+#next-figure {
+    display: inline-block;
+    vertical-align: top;
+    margin: 1rem 2rem 0 2rem;
+}
+
+#statistics {
+    width: 171px;
+    height: 2rem;
+    text-align: left;
+}
+
+#next-figure {
+    width: 103px;
+    height: 2rem;
+    text-align: left;
+}
