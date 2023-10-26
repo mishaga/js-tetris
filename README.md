@@ -1,4 +1,4 @@
-# js-tetris
+# tetris
 
 Implementation of classic Tetris game on Vanilla JS
 

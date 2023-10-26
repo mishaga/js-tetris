@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    margin: 1rem 0 0 0;
+    margin: 2rem 0;
 }
 
 #tetris-game-canvas,
@@ -15,8 +15,13 @@ header {
 #next-figure {
     display: inline-block;
     vertical-align: top;
-    margin: 1rem 2rem 0 2rem;
+    margin-top: 1rem;
 }
+#tetris-game-canvas,
+#statistics {
+    margin-right: 1rem;
+}
+
 
 #statistics {
     width: 171px;

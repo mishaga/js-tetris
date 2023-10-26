@@ -1,79 +1,79 @@
 class Figure {
     constructor(points) {
-        this.points = points;
+        this.points = points
 
-        this.shape = null;
-        this.code = null;
-        this.colour = null;
+        this.shape = null
+        this.code = null
+        this.colour = null
 
-        this.rotation_index = 0;
-        this.top_x = 0;
-        this.top_y = 0;
+        this.rotationIndex = 0
+        this.topX = 0
+        this.topY = 0
 
-        this.coordinates = this.#get_coordinates();
+        this.coordinates = this.#getCoordinates()
     }
 
-    get_rotate_coordinates() {
-        const previous = this.rotation_index;
-        this.rotation_index = this.#get_next_rotation_index();
-        const coordinates = this.#get_coordinates();
-        this.rotation_index = previous;
-        return coordinates;
+    getRotateCoordinates() {
+        const previous = this.rotationIndex
+        this.rotationIndex = this.#getNextRotationIndex()
+        const coordinates = this.#getCoordinates()
+        this.rotationIndex = previous
+        return coordinates
     }
 
     rotate() {
-        this.coordinates = this.get_rotate_coordinates();
-        this.rotation_index = this.#get_next_rotation_index();
+        this.coordinates = this.getRotateCoordinates()
+        this.rotationIndex = this.#getNextRotationIndex()
     }
 
-    move_down() {
+    moveDown() {
         this.coordinates = this.coordinates.map(point => {
-            return new Point(point.x, point.y + 1);
-        });
-        this.top_y++;
+            return new Point(point.x, point.y + 1)
+        })
+        this.topY++
     }
 
-    move_left() {
+    moveLeft() {
         this.coordinates = this.coordinates.map(point => {
-            return new Point(point.x - 1, point.y);
-        });
-        this.top_x--;
+            return new Point(point.x - 1, point.y)
+        })
+        this.topX--
     }
 
-    move_right() {
+    moveRight() {
         this.coordinates = this.coordinates.map(point => {
-            return new Point(point.x + 1, point.y);
-        });
-        this.top_x++;
+            return new Point(point.x + 1, point.y)
+        })
+        this.topX++
     }
 
-    get_width_height() {
-        let width = 0;
-        let height = 0;
-        const points = this.points[this.rotation_index];
+    getWidthAndHeight() {
+        let width = 0
+        let height = 0
+        const points = this.points[this.rotationIndex]
 
         points.forEach(point => {
             if (point.x >= width) {
-                width = point.x + 1;
+                width = point.x + 1
             }
             if (point.y >= height) {
-                height = point.y + 1;
+                height = point.y + 1
             }
-        });
-        return [width, height];
+        })
+        return [width, height]
     }
 
-    #get_coordinates() {
-        const [width, height] = this.get_width_height();
-        const mid = Math.round(settings.field_width / 2) - Math.round(width / 2);
-        const points = this.points[this.rotation_index];
+    #getCoordinates() {
+        const [width, height] = this.getWidthAndHeight()
+        const mid = Math.round(settings.fieldWidth / 2) - Math.round(width / 2)
+        const points = this.points[this.rotationIndex]
         return points.map(point => {
-            return new Point(mid + point.x + this.top_x, point.y - height + this.top_y);
-        });
+            return new Point(mid + point.x + this.topX, point.y - height + this.topY)
+        })
     }
 
-    #get_next_rotation_index() {
-        return this.rotation_index + 1 === this.points.length ? 0 : this.rotation_index + 1;
+    #getNextRotationIndex() {
+        return this.rotationIndex + 1 === this.points.length ? 0 : this.rotationIndex + 1
     }
 }
 
@@ -104,11 +104,11 @@ class FigureL extends Figure {
                 new Point(1, 1),
                 new Point(2, 1),
             ],
-        ];
-        super(points);
-        this.shape = 'L';
-        this.code = 1;
-        this.colour = 'lightsteelblue';
+        ]
+        super(points)
+        this.shape = 'L'
+        this.code = 1
+        this.colour = 'lightsteelblue'
     }
 }
 
@@ -139,11 +139,11 @@ class FigureJ extends Figure {
                 new Point(1, 1),
                 new Point(2, 1),
             ],
-        ];
-        super(points);
-        this.shape = 'J';
-        this.code = 2;
-        this.colour = 'lightsteelblue';
+        ]
+        super(points)
+        this.shape = 'J'
+        this.code = 2
+        this.colour = 'lightsteelblue'
     }
 }
 
@@ -162,11 +162,11 @@ class FigureI extends Figure {
                 new Point(2, 0),
                 new Point(3, 0),
             ],
-        ];
-        super(points);
-        this.shape = 'I';
-        this.code = 3;
-        this.colour = 'plum';
+        ]
+        super(points)
+        this.shape = 'I'
+        this.code = 3
+        this.colour = 'plum'
     }
 }
 
@@ -179,11 +179,11 @@ class FigureO extends Figure {
                 new Point(1, 0),
                 new Point(1, 1),
             ],
-        ];
-        super(points);
-        this.shape = 'O';
-        this.code = 4;
-        this.colour = 'lightblue';
+        ]
+        super(points)
+        this.shape = 'O'
+        this.code = 4
+        this.colour = 'lightblue'
     }
 }
 
@@ -202,11 +202,11 @@ class FigureZ extends Figure {
                 new Point(1, 1),
                 new Point(0, 2),
             ],
-        ];
-        super(points);
-        this.shape = 'Z';
-        this.code = 5;
-        this.colour = 'lightpink';
+        ]
+        super(points)
+        this.shape = 'Z'
+        this.code = 5
+        this.colour = 'lightpink'
     }
 }
 
@@ -225,11 +225,11 @@ class FigureS extends Figure {
                 new Point(1, 1),
                 new Point(1, 2),
             ],
-        ];
-        super(points);
-        this.shape = 'S';
-        this.code = 6;
-        this.colour = 'lightpink';
+        ]
+        super(points)
+        this.shape = 'S'
+        this.code = 6
+        this.colour = 'lightpink'
     }
 }
 
@@ -260,10 +260,10 @@ class FigureT extends Figure {
                 new Point(1, 2),
                 new Point(0, 1),
             ],
-        ];
-        super(points);
-        this.shape = 'T';
-        this.code = 7;
-        this.colour = 'plum';
+        ]
+        super(points)
+        this.shape = 'T'
+        this.code = 7
+        this.colour = 'plum'
     }
 }
