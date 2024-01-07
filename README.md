@@ -1,6 +1,6 @@
 # tetris
 
-Implementation of classic Tetris game on Vanilla JS
+Implementation of the classic Tetris game in pure JavaScript.
 
 You can try it here: https://tetris.mishaga.com
 
