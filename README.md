@@ -4,4 +4,4 @@ Implementation of the classic Tetris game in pure JavaScript.
 
 You can try it here: https://tetris.mishaga.com
 
-![img](https://img.mishaga.com/git/380x460/091f8e259ea94c5cadd24624bc7eff72.png)
+![img](https://img.mishaga.com/git/1304x1480/a285fbf952ad4f5bbe1554d9b59b59f1.png)
